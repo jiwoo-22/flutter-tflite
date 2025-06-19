@@ -22,6 +22,44 @@
 </a>
 </p>
 
+# YOLOv8 Object Detection (Snacks & Drinks) — Colab Training Log
+
+This repository documents the full training and export process of two YOLOv8 object detection models — one for **snacks** and one for **drinks** — all trained in **Google Colab** using datasets from **Roboflow**.
+
+---
+
+## Project Summary
+
+- **Framework:** YOLOv8 (Ultralytics)
+- **Platform:** Google Colab
+- **Target Classes:** Snacks, Drinks
+- **Goal:** Build a lightweight object detection system for a Flutter-based kiosk
+
+---
+
+## What This Repo Contains
+
+| File | Description |
+|------|-------------|
+| `snack_model.pt` | YOLOv8 model trained on snack images |
+| `drink_model.pt` | YOLOv8 model trained on drink images |
+| `snack_model.onnx` | Converted ONNX model from `snack_model.pt` (for TFLite export) |
+| `drink_model.onnx` | Converted ONNX model from `drink_model.pt` |
+| `convert_to_tflite.py` | Script to convert ONNX models to `.tflite` |
+| `README.md` | This file 📝 |
+
+---
+
+## Training Process (Colab)
+
+1. **Roboflow Dataset Import**
+   ```python
+   from roboflow import Roboflow
+   rf = Roboflow(api_key="...")
+   project = rf.workspace("...").project("...")
+   dataset = project.version(X).download("yolov8")
+
+
 ## Announcement
 
 Update: 26 April, 2023
