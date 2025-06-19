@@ -59,6 +59,20 @@ This repository documents the full training and export process of two YOLOv8 obj
    project = rf.workspace("...").project("...")
    dataset = project.version(X).download("yolov8")
 
+2. **Training YOLOv8**
+   ```bash
+   !yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
+
+3. **Validation**
+   ```bash
+   !yolo task=detect mode=val model=best.pt data=data.yaml
+
+4. **Export to ONXX (opset 13)**
+    ```bash
+    !yolo export model=best.pt format=onnx opset=13
+
+
+
 
 ## Announcement
 
