@@ -70,10 +70,6 @@ This repository documents the full training and export process of two YOLOv8 obj
 4. **Export to ONXX (opset 13)**
     ```bash
     !yolo export model=best.pt format=onnx opset=13
-
-
-
-
 ## Announcement
 
 Update: 26 April, 2023
